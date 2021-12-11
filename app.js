@@ -8,15 +8,18 @@ const { Client } = require('pg');
 const { response } = require('express');
 const cors = require('cors');
 app.use(cors());
-const port = process.env.PORT || 210;
+const port = process.env.PORT || 5432;
 
 const client = new Client({
     // Lengkapi koneksi dengan database
-    host: "localhost",
+    host: "ec2-35-175-17-88.compute-1.amazonaws.com",
     port: 5432,
-    user: "postgres",
-    password: "",
-    database: "pcb_project",
+    user: "wahjkcahisacfh",
+    password: "37a3a52a213eeaba2aa8dfdcd2f729cb876f9522c35be3ea3144baaab5d421eb",
+    database: "dc3ln104q673ae",
+    ssl: {
+      rejectUnauthorized: false,
+    },
   });
 
   client.connect((err) =>{
